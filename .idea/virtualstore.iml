@@ -27,6 +27,8 @@
         <option value="$MODULE_DIR$/clientes/templates" />
         <option value="$MODULE_DIR$/entradas/templates" />
         <option value="$MODULE_DIR$/salidas/templates" />
+        <option value="$MODULE_DIR$/articulos/migrations/templates" />
+        <option value="$MODULE_DIR$/proveedores/templates" />
       </list>
     </option>
   </component>
