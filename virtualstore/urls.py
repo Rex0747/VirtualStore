@@ -18,12 +18,15 @@ from django.urls import path
 from clientes import views as viewClient
 from entradas import views as viewEntradas
 from salidas import views as viewSalidas
+from tiendainf import views as viewTienda
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('addclient', viewClient.AddCliente),
     path('addentrada',viewEntradas.AddEntrada),
     path('addsalida',viewSalidas.AddSalida),
+    path('virtualstore', viewTienda.virtualstore),
+
 
 
 

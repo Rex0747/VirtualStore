@@ -1,0 +1,11 @@
+#contenedor{width:70%;height:80%;background-color:aqua;margin:auto;}
+#contenido{width:90%;height:90%;background-color:aquamarine;margin:auto;}
+#titulo{margin:auto;color:blue;text-align:center;}
+
+#barraDerecha{width:14%;height:80%;background-color:aquamarine;float:left;}
+#barraIzquida{width:14%;height:80%;background-color:antiquewhite;float:right;}
+
+#header{width:100%;height:9%;background-color:burlywood;margin-bottom:5px;}
+#footer{width:100%;height:9%;background-color:burlywood;margin-top:5px;}
+
+#logo{width: 60px }

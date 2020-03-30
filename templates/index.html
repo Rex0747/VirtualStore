@@ -1,0 +1,23 @@
+{% load  static %}
+{% include 'header.html' %}
+{% include 'barraDerecha.html' %}
+{% include 'barraIzquida.html' %}
+
+
+<html lang="es">
+    <head>
+        <title>VirtualStore</title>
+        <link rel="STYLESHEET" type="text/css" href={% static 'css/virtualstore.css' %}>
+    </head>
+    <body>
+        <div id="contenedor">
+            <H2 id="titulo">{{titulo}}</H2>
+            <div id="contenido">
+
+
+            </div>
+        </div>
+    </body>
+{% include 'footer.html' %}
+
+</html>
