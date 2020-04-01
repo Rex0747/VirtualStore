@@ -14,7 +14,7 @@ class clientes(models.Model):
     fecha_alta=models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return'%s %s %s %s %s %s %s' %(self.codigo,self.roll,self.activo,self.nombre,
+        return'%s %s %s %s %s %s %s' %(self.codigo,self.movil,self.activo,self.nombre,
         self.direccion,self.mail,self.fecha_alta)
 
 
