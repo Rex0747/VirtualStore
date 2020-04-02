@@ -9,7 +9,7 @@ from proveedores.models import proveedores
 # Register your models here.
 
 class entradasclas(admin.ModelAdmin):
-    list_display = ('codigo', 'fechaEntrada', 'unidades', 'precioUnidad', 'agencia', 'precioPorte')
+    list_display = ('codigo','nombre', 'fechaEntrada', 'unidades', 'precioUnidad', 'agencia', 'precioPorte')
     search_fields = ('codigo', 'fechaEntrada')
     list_filter = ('fechaEntrada',)
 
