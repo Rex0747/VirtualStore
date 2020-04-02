@@ -1,0 +1,15 @@
+#contenedor{width:70%;height:80%;background-color:aqua;margin:auto;}
+#contenido{width:90%;height:90%;background-color:aquamarine;margin:auto;}
+#titulo{margin:auto;color:blue;text-align:center;}
+
+#barraDerecha{width:14%;height:80%;background-color:rgba(255,255,255,0.2);float:left;}
+#barraIzquida{width:14%;height:80%;background-color:antiquewhite;float:right;}
+
+#header{width:100%;height:9%;background-color:burlywood;margin-bottom:5px;}
+#footer{width:100%;height:9%;background-color:burlywood;margin-top:5px;}
+
+#logo{width: 60px; float:left;margin-left: 15px;margin-top:2px; }
+#titulo{margin-left: 10% ;color: blue;;}
+
+#tcategorias{margin: 8% 5%}
+#tcategorias tr td a{ text-decoration: none;font-size:20px; color:#F46 }
