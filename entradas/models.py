@@ -5,19 +5,21 @@ from django.forms import FloatField
 
 from articulos.models import articulos
 from clientes.models import clientes
+from proveedores.models import proveedores
+from agencias.models import agencias
 
 # Create your models here.
 class entradas(models.Model):
-    fk_cliente=models.ForeignKey(clientes, on_delete=models.CASCADE,default=1)
-    codigo=models.CharField(max_length=8,null=False, verbose_name='codigo')
-    #fk_articulo=models.ForeignKey(articulos,on_delete=models.CASCADE,blank=True)
+    nAlbaran=models.CharField(max_length=8,null=False, verbose_name='Albaran')
+    fk_proveedor=models.ForeignKey(proveedores,on_delete=models.CASCADE,blank=True)
+    fk_articulo=models.ForeignKey(articulos,on_delete=models.CASCADE,blank=True)
     #nombre=models.CharField(max_length=70,null=True)
     fechaEntrada=models.DateTimeField(default=datetime.now, blank=True)
-    unidades=models.IntegerField(null=False)
-    precioUnidad=models.FloatField(null=False)
+    unidades=models.IntegerField(blank=False)
+    precioUnidad=models.FloatField(blank=False)
     peso=models.FloatField( default=0)
-    agencia=models.CharField(max_length=20, null=True,default='')
-    precioPorte=models.FloatField(null=True,default=True)
+    agencia=models.ForeignKey(agencias,on_delete=models.CASCADE, blank=True,default='')
+    precioPorte=models.FloatField(blank=True,default=True)
     porte_pagado=models.NullBooleanField(default=True)
     #precioTotal= models.FloatField(default=0)
 
@@ -30,7 +32,7 @@ class entradas(models.Model):
             #precTotal=precTotal+entradas.precioPorte
         #entradas.precioTotal=precTotal
 
-        return '%s %s %s %s %s %s %s %s %s' % (self.fk_cliente, self.codigo, self.fechaEntrada, self.unidades, self.precioUnidad,
+        return '%s %s %s %s %s %s %s %s %s' % ( self.nAlbaran,self.fk_articulo, self.fechaEntrada, self.unidades, self.precioUnidad,
                                           self.peso, self.agencia, self.precioPorte,self.porte_pagado )
     class META:
         ordering=['fechaEntrada']
