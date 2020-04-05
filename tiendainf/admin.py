@@ -5,6 +5,7 @@ from entradas.models import entradas
 from salidas.models import salidas
 from proveedores.models import proveedores
 from agencias.models import agencias
+from tiendainf.models import ubicacionesStocks
 
 
 # Register your models here.
@@ -21,3 +22,4 @@ admin.site.register( salidas )
 admin.site.register( proveedores )
 admin.site.register( familia )
 admin.site.register( agencias )
+admin.site.register( ubicacionesStocks )

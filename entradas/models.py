@@ -32,7 +32,7 @@ class entradas(models.Model):
             #precTotal=precTotal+entradas.precioPorte
         #entradas.precioTotal=precTotal
 
-        return '%s %s %s %s %s %s %s %s %s' % ( self.nAlbaran,self.fk_articulo, self.fechaEntrada, self.unidades, self.precioUnidad,
+        return '%s %s %s %s %s %s %s %s %s %s' % ( self.nAlbaran,self.fk_articulo,self.fk_proveedor, self.fechaEntrada, self.unidades, self.precioUnidad,
                                           self.peso, self.agencia, self.precioPorte,self.porte_pagado )
     class META:
         ordering=['fechaEntrada']

@@ -1,0 +1,72 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AÑADIR ENTRADA</title>
+    <link rel="STYLESHEET" type="text/css" href={% static 'css/entradas.css' %}>
+</head>
+<body>
+    <div id="entradas">
+        <h2>AÑADIR ENTRADA</h2>
+        <form id="form_entradas" nombre="form_entrada" method="post" >
+            {% csrf_token %}
+            <table id="tentradas">
+                    <tr>
+                        <td class="td"><label>Albaran:</label></td>
+                        <td><input type="text" name="nalbaran" id="nalbaran" onchange="enableBoton()"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>FK_Referencia:</label></td>
+                        <td><input type="text" name="ref" id="ref"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>Unidades:</label></td>
+                        <td><input type="text" name="unidades" id="unidades"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>Precio Unidad:</label></td>
+                        <td><input type="text" name="precunid" id="precunid"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>Peso Unidad:</label></td>
+                        <td><input type="text" name="peso" id="peso"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>FK_proveedor:</label></td>
+                        <td><input type="text" name="proveedor" id="proveedor"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>FK_Agencia:</label></td>
+                            <td><select name="agencia" id="agencia" class="desplegable">
+                                <option value="1">Windows Vista</option>
+                                <option value="2">Windows 7</option>
+                                <option value="3">Windows XP</option>
+                                <option value="10">Fedora</option>
+                                <option value="11">Debian</option>
+                                <option value="12">Suse</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>PrecioPorte:</label></td>
+                        <td><input type="text" name="precporte" id="precporte"></td>
+                    </tr>
+                    <tr>
+                        <td class="td"><label>PortePagado:</label></td>
+                        <td><input type="checkbox" name="portepag" id="portepag" value="pagado"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" id="bimg">ENVIAR DATOS</button></td>
+                    </tr>
+                </table>
+
+
+        </form>
+
+
+    </div>
+
+
+</body>
+</html>

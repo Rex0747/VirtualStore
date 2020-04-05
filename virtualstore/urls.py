@@ -23,10 +23,10 @@ from tiendainf import views as viewTienda
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('addclient', viewClient.AddCliente),
-    path('addentrada',viewEntradas.AddEntrada),
     path('addsalida',viewSalidas.AddSalida),
     path('virtualstore', viewTienda.virtualstore),
     path('p/<url>', viewTienda.portatiles),
+    path('addentrada',viewEntradas.addEntrada),
 
 
 
