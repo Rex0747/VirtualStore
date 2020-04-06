@@ -34,17 +34,18 @@
                     </tr>
                     <tr>
                         <td class="td"><label>FK_proveedor:</label></td>
-                        <td><input type="text" name="proveedor" id="proveedor"></td>
+                        <td><select name="proveedor" id="proveedor" class="desplegable">
+                            {% for i in proveedor %}
+                                    <option value="1">{{i}}</option>
+                                {% endfor %}
+                            </select></td>
                     </tr>
                     <tr>
                         <td class="td"><label>FK_Agencia:</label></td>
                             <td><select name="agencia" id="agencia" class="desplegable">
-                                <option value="1">Windows Vista</option>
-                                <option value="2">Windows 7</option>
-                                <option value="3">Windows XP</option>
-                                <option value="10">Fedora</option>
-                                <option value="11">Debian</option>
-                                <option value="12">Suse</option>
+                                {% for i in agencia %}
+                                    <option value="1">{{i}}</option>
+                                {% endfor %}
                             </select></td>
                     </tr>
                     <tr>

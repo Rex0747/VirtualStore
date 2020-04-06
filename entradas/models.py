@@ -12,7 +12,7 @@ from agencias.models import agencias
 class entradas(models.Model):
     nAlbaran=models.CharField(max_length=8,null=False, verbose_name='Albaran')
     fk_proveedor=models.ForeignKey(proveedores,on_delete=models.CASCADE,blank=True)
-    fk_articulo=models.ForeignKey(articulos,on_delete=models.CASCADE,blank=True)
+    fk_articulo=models.CharField(max_length=8,blank=True) # models.ForeignKey(articulos,on_delete=models.CASCADE,blank=True)
     #nombre=models.CharField(max_length=70,null=True)
     fechaEntrada=models.DateTimeField(default=datetime.now, blank=True)
     unidades=models.IntegerField(blank=False)
@@ -20,7 +20,7 @@ class entradas(models.Model):
     peso=models.FloatField( default=0)
     agencia=models.ForeignKey(agencias,on_delete=models.CASCADE, blank=True,default='')
     precioPorte=models.FloatField(blank=True,default=True)
-    porte_pagado=models.NullBooleanField(default=True)
+    porte_pagado=models.BooleanField(default=True)
     #precioTotal= models.FloatField(default=0)
 
 
