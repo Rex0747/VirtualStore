@@ -36,7 +36,7 @@
                         <td class="td"><label>FK_proveedor:</label></td>
                         <td><select name="proveedor" id="proveedor" class="desplegable">
                             {% for i in proveedor %}
-                                    <option value="1">{{i}}</option>
+                                    <option value="{{i.pk}}">{{i}}</option>
                                 {% endfor %}
                             </select></td>
                     </tr>
@@ -44,7 +44,7 @@
                         <td class="td"><label>FK_Agencia:</label></td>
                             <td><select name="agencia" id="agencia" class="desplegable">
                                 {% for i in agencia %}
-                                    <option value="1">{{i}}</option>
+                                    <option value="{{i.pk}}">{{i}}</option>
                                 {% endfor %}
                             </select></td>
                     </tr>
@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <td class="td"><label>PortePagado:</label></td>
-                        <td><input type="checkbox" name="portepag" id="portepag" value="pagado"></td>
+                        <td><p><input type="checkbox" name="portepag" id="portepag" >Porte Pagado</p></td>
                     </tr>
                     <tr>
                         <td></td>

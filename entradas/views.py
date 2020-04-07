@@ -9,7 +9,7 @@ from django.http import HttpResponse
 # Create your views here.
 def addEntrada(request):
     nalbaran='';unidades='';referencia='';precunidad='';peso='';proveedor='';
-    agencia='';precporte='';portepag='';error=False
+    agencia='';_agencia='';precporte='';portepag=False;error=False
 
     if request.method == 'POST':
         if request.POST['nalbaran']:
@@ -38,21 +38,34 @@ def addEntrada(request):
         if request.POST['precporte']:
             precporte = request.POST['precporte']
             print(precporte)
-        if request.POST['portepag']:
+        if 'portepag' in request.POST:
             portepag = request.POST['portepag']
             print(str(portepag))
+            if portepag == 'on':
+                portepag=True
+        else:
+            portepag=False
 
     if error==True:
         agencia = agencias.objects.all()
         proveedor = proveedores.objects.all()
         return render(request, 'addentrada.html',{'agencia': agencia, 'proveedor': proveedor})
 
-    print('Agencia: ' + str(agencia))
+    _agencia=agencias.objects.filter(id=agencia)
+    _proveedor=proveedores.objects.filter(id=proveedor)
+
+    print('Agencia: ' + str(_agencia))
     print('Proveedor: ' + str(proveedor))
     fecha = datetime.now()
+    #from django.db import connection
+    #print(connection.queries)
+    
 
-    data=entradas(nAlbaran=nalbaran,fk_proveedor=int(proveedor),fk_articulo=referencia,FechaEntrada=fecha,
-    Unidades=unidades,PrecioUnidad=precunidad,Peso=peso,Agencia=int(agencia),PrecioPorte=precporte,porte_pagado=str(portepag))
+    data=entradas(nAlbaran=nalbaran,fk_proveedor=_proveedor.get(id=proveedor) ,fk_articulo=referencia,fechaEntrada=fecha,
+    unidades=unidades,precioUnidad=precunidad,peso=peso,agencia=_agencia.get(id=agencia),precioPorte=precporte,porte_pagado=str(portepag))
+    data.save()
 
-    return render( request, 'addentrada.html')
+    agencia = agencias.objects.all()
+    proveedor = proveedores.objects.all()
+    return render( request, 'addentrada.html',{'agencia': agencia, 'proveedor': proveedor} )
 
