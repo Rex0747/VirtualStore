@@ -61,18 +61,20 @@ def addEntrada(request):
         print('Excepcion al canto: '+ str( e))
 
     print('Agencia: ' + str(_agencia))
-    print('Proveedor: ' + str(proveedor))
+    print('Proveedor: ' + str(_proveedor))
     fecha = datetime.now()
     #from django.db import connection
     #print(connection.queries)
-    if nalbaran == '':
+    if nalbaran == '' :
         nalbaran=entradas.objects.latest('id')
         print('nalbaran: '+ str(nalbaran))
         nalbaran = str( int( nalbaran.nAlbaran ) +  1 )
         print('nalbaran: '+ nalbaran )
 
     try:
-        data=entradas(nAlbaran=nalbaran,fk_proveedor=_proveedor.get(id=proveedor) ,fk_articulo=referencia,fechaEntrada=fecha,
+        _referencia=articulos.objects.filter(codigo=referencia)
+
+        data=entradas(nAlbaran=nalbaran,fk_proveedor=_proveedor.get(id=proveedor) ,fk_articulo=_referencia.get(codigo=referencia),fechaEntrada=fecha,
         unidades=unidades,precioUnidad=precunidad,peso=peso,agencia=_agencia.get(id=agencia),precioPorte=precporte,porte_pagado=str(portepag))
         data.save()
     except Exception as e:
