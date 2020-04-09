@@ -1,0 +1,11 @@
+
+
+#entradas{width: 60%; margin: auto; background-color: aquamarine; color: blue; text-align: center;padding-bottom: 40px;}
+#form_entradas{width: 90%;margin:auto;background-color: aquamarine;}
+#tentradas{border:solid 2px;width: 90%;margin:auto;}
+#tentradas tr td{ padding: 12px; font-size: 1.5em}
+.td{width: 30%;text-align: left}
+input {width: 95%}
+#bimg{ width: 100%; height: 50px; background-color: chartreuse;color:blue; box-shadow:#444 8px 10px 20px;margin-top:30px;
+font-size: 1.1em}
+.desplegable{width: 95%}
