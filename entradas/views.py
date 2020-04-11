@@ -81,6 +81,5 @@ def addEntrada(request):
         print('ERROR: '+ str(e))
     agencia = agencias.objects.all()
     proveedor = proveedores.objects.all()
-
     return render( request, 'addentrada.html',{'agencia': agencia, 'proveedor': proveedor} )
 

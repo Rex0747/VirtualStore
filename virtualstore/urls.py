@@ -19,6 +19,8 @@ from clientes import views as viewClient
 from entradas import views as viewEntradas
 from salidas import views as viewSalidas
 from tiendainf import views as viewTienda
+from articulos import views as viewArticulos
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,7 @@ urlpatterns = [
     path('virtualstore', viewTienda.virtualstore),
     path('p/<url>', viewTienda.portatiles),
     path('addentrada',viewEntradas.addEntrada),
+    path('imparticulos/',viewArticulos.ImportarArticulos),
 
 
 
