@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from articulos.models import articulos
 
 # Create your views here.
 def virtualstore(request):
@@ -8,5 +9,10 @@ def virtualstore(request):
 
 def portatiles(request, url):
 
+    elemento=articulos.objects.all()
 
-    return render(request, 'index.html', {'titulo': url})
+
+
+
+
+    return render(request, 'index.html', {'titulo': url,'elemento': elemento})
