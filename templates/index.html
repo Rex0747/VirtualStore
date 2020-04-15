@@ -1,4 +1,4 @@
-{% load  static %}
+{% load static %}
 {% include 'header.html' %}
 {% include 'barraDerecha.html' %}
 {% include 'barraIzquida.html' %}
@@ -13,25 +13,51 @@
         <div id="contenedor">
             <H2 id="titulo">{{titulo|upper}}</H2>
             <div id="contenido">
-                <div id="elemento">
-                    <table id="telemento">
-                        {% for elem in elemento %}
-                            <tr>
-                                <td><p>{{elem.codigo}}</p><p>{{elem.nombre}}</p><p>{{elem.imagen}}</p>
-                                    <img src={{elem.imagen.url}}></td>
 
+                <div id="elem1" class="elemento">
+                    <table id="telemento1">
+                        <th>COLUMNA 1</th>
+                        {% for el1  in col1 %}
+                            <tr>
+                                <td><figure class="celem">
+                                    <img class ="refimg" src={{el1.imagen.url}}}>
+                                    <p>{{el1.precio}}</p><p>{{el1.nombre}}</p><p>
+                                </figure></td>
                             </tr>
                         {% endfor %}
                     </table>
-                    <figure id="figura">
-                        <h2>FIGURA</h2>
-                    </figure>
+                </div>
+                <div id="elem2" class="elemento">
+                    <table id="telemento2">
+                        <th>COLUMNA 2</th>
+                        {% for el2  in col2 %}
+                            <tr>
+                                <td><figure class="celem">
+                                    <img class ="refimg" src={{el2.imagen.url}}}>
+                                    <p>{{el2.precio}}</p><p>{{el2.nombre}}</p>
+                                </figure></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div id="elem3" class="elemento">
+                    <table id="telemento3">
+                        <th>COLUMNA 3</th>
+                        {% for el3  in col3 %}
+                            <tr>
+                                <td><figure class="celem">
+                                    <img class ="refimg" src={{el3.imagen.url}}}>
+                                    <p>{{el3.precio}}</p><p>{{el3.nombre}}</p><p>
 
-
+                                </figure></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
     </body>
-{% include 'footer.html' %}
+
+    {% include 'footer.html' %}
 
 </html>
